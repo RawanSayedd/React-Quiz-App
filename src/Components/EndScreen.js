@@ -15,7 +15,7 @@ function EndScreen() {
       <h1>Quiz Finished</h1>
       <h2>
         Your Score is: <br />
-        {score} / {Questions.length}
+        {score + 1} / {Questions.length}
       </h2>
       <button onClick={restartQuiz}>Restart Quiz</button>
     </div>
