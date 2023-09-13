@@ -1,38 +1,91 @@
+html {
+  background: #ccc;
+}
 .App {
   text-align: center;
+  font-family: arial, Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgb(35, 154, 100) 34%,
+    rgba(0, 212, 255, 1) 100%
+  );
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  box-shadow: 0 2px 7px 1px rgb(35, 35, 35);
+}
+.menu button,
+.quiz button,
+.end-screen button {
+  width: 300px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.selected {
+  background: rgb(110, 176, 188);
+}
+.quiz {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgb(35, 154, 100) 34%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu,
+.quiz,
+.end-screen h1,
+.end-screen h2 {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.quiz .options {
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#big-btn {
+  width: 48%;
+  background: rgb(110, 176, 188);
+  transition: 0.3s ease;
+}
+.quiz #big-btn:hover {
+  background: rgba(110, 176, 188, 0.6);
+  transform: scale(1.04);
+}
+.end-screen {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgb(35, 154, 100) 34%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
