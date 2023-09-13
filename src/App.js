@@ -9,6 +9,7 @@ function App() {
   const [gameState, setGameState] = useState("menu"); //first state.. displaying the main menu.. starting the quiz (GLOBAL STATE)
   const [score, setScore] = useState(0);
   const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   return (
     <div className="App">
@@ -21,6 +22,8 @@ function App() {
           setScore,
           userName,
           setUserName,
+          userEmail,
+          setUserEmail,
         }}
       >
         {gameState === "menu" && <MainMenu />}

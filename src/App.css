@@ -46,6 +46,9 @@ html {
   outline: rgb(35, 154, 100);
   color: gray;
 }
+.menu small {
+  color: red;
+}
 .end-screen h3 {
   color: #fff;
   font-size: 30px;
