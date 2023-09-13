@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import React from "react";
 import { GameStateContext } from "../Helpers/Contexts";
 import { Questions } from "../Helpers/QuestionBank";
@@ -8,6 +8,27 @@ function Quiz() {
   //when setcurrentquestion equals to zero, so only first question is applied. and so on
   //so when we click on next question button, the only thing we do is increment setcurrentquestion by one to show the next one
   const [optionChosen, setOptionChosen] = useState("");
+  const [timer, setTimer] = useState(30);
+
+  useEffect(() => {
+    const countdown = setInterval(() => {
+      if (timer > 0) {
+        setTimer((prevTimer) => prevTimer - 1);
+      } else {
+        clearInterval(countdown);
+        handleOutOfTime();
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(countdown);
+    };
+  }, [timer]);
+
+  const handleOutOfTime = () => {
+    setGameState("endScreen");
+  };
+
   const nextQuestion = () => {
     if (Questions[currQuestion].answer === optionChosen) {
       setScore(score + 1);
@@ -23,6 +44,11 @@ function Quiz() {
   };
   return (
     <div className="quiz">
+      {timer > 0 ? (
+        <div className="countdown">Time Remaining: {timer}s</div>
+      ) : (
+        <h2 className="countdown">TIME OUT!</h2>
+      )}
       <h1>{Questions[currQuestion].prompt}</h1>
       <div className="options">
         <button

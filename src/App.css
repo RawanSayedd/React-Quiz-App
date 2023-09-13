@@ -27,6 +27,7 @@ html {
   box-shadow: 0 2px 7px 1px rgb(35, 35, 35);
 }
 .menu button,
+.menu input,
 .quiz button,
 .end-screen button {
   width: 300px;
@@ -35,6 +36,19 @@ html {
   border: none;
   border-radius: 5px;
   font-size: 20px;
+}
+.menu label {
+  margin-right: 170px;
+}
+.menu input {
+  height: 40px;
+  font-size: 14px;
+  outline: rgb(35, 154, 100);
+  color: gray;
+}
+.end-screen h3 {
+  color: #fff;
+  font-size: 30px;
 }
 
 button:hover {
